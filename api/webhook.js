@@ -12,13 +12,12 @@ export default async function handler(request, response) {
         text,
       } = body.message;
 
-      let message = ``;
-
-      Object.keys(QUESTIONS).forEach((key) => {
-        if (new RegExp(QUESTIONS[key], "i").test(text)) {
-          message = RESPONSES[key];
+      const message = Object.keys(QUESTIONS).reduce((previous, current) => {
+        if (new RegExp(QUESTIONS[current], "i").test(text)) {
+          return `${RESPONSES[current]} `;
         }
-      });
+        return previous;
+      }, "");
 
       await bot.sendMessage(id, message, { parse_mode: "Markdown" });
     }
