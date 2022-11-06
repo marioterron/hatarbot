@@ -2,9 +2,9 @@
   "name": "hatarbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node ./main.ts"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,12 @@
     "url": "https://github.com/marioterron/hatarbot/issues"
   },
   "homepage": "https://github.com/marioterron/hatarbot#readme",
-  "dependencies": {},
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "telegraf": "^4.10.0"
+  },
   "devDependencies": {
+    "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.27.0",
@@ -27,6 +31,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "prettier": "^2.7.1",
+    "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   }
 }
