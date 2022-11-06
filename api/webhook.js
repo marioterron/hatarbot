@@ -1,5 +1,4 @@
 import TelegramBot from "node-telegram-bot-api";
-
 import { QUESTIONS, RESPONSES } from "../lib/constants";
 
 export default async function handler(request, response) {
