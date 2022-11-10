@@ -1,5 +1,5 @@
 import TelegramBot from "node-telegram-bot-api";
-import { QUESTIONS, RESPONSES } from "../lib/constants";
+import { COMMANDS, QUESTIONS, RESPONSES } from "../lib/constants";
 
 export default async function handler(request, response) {
   try {
@@ -19,7 +19,13 @@ export default async function handler(request, response) {
         return previous;
       }, "");
 
-      await bot.sendMessage(id, message, { parse_mode: "Markdown" });
+      if (new RegExp(COMMANDS.saySomething, "i").test(text)) {
+        await bot.sendMessage(RESPONSES[Math.random(0, RESPONSES.length)], {
+          parse_mode: "Markdown",
+        });
+      } else {
+        await bot.sendMessage(id, message, { parse_mode: "Markdown" });
+      }
     }
   } catch (error) {
     console.error("Error sending message", error.toString());
