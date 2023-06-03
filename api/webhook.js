@@ -19,7 +19,7 @@ export default async function handler(request, response) {
 
       const message = Object.keys(QUESTIONS).reduce((previous, current) => {
         if (new RegExp(QUESTIONS[current], "i").test(text)) {
-          return `${RESPONSES[current]} `;
+          return `debug: ${RESPONSES[current]} `;
         }
         return previous;
       }, "");
