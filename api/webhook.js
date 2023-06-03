@@ -26,6 +26,7 @@ export default async function handler(request, response) {
 
       if (new RegExp(COMMANDS.saySomething, "i").test(text)) {
         await bot.sendMessage(
+          id,
           RANDOM_RESPONSES[Math.random(0, RANDOM_RESPONSES.length)],
           {
             parse_mode: "Markdown",
