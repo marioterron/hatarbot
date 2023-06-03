@@ -1,19 +1,17 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
   extends: [
-    "plugin:@typescript-eslint/recommended",
+    "eslint:recommended",
+    "plugin:import/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["simple-import-sort", "import"],
+  plugins: ["import"],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
   },
-  rules: {
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
-    "import/first": "error",
-    "import/newline-after-import": "error",
-    "import/no-duplicates": "error",
+  env: {
+    browser: true,
+    node: true,
   },
+  rules: {},
 };
