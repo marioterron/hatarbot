@@ -19,7 +19,11 @@ export default async function handler(request, response) {
 
       const message = Object.keys(QUESTIONS).reduce((previous, current) => {
         if (new RegExp(COMMANDS.saySomething, "i").test(text)) {
-          return `${RANDOM_RESPONSES[Math.random(0, RANDOM_RESPONSES.length)]}`;
+          return `${
+            RANDOM_RESPONSES[
+              Math.floor(Math.random() * RANDOM_RESPONSES.length)
+            ]
+          }`;
         }
         if (new RegExp(QUESTIONS[current], "i").test(text)) {
           return `${RESPONSES[current]} `;
