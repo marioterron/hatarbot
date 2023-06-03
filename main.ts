@@ -20,7 +20,7 @@ bot.start((ctx) => {
 
 Object.keys(QUESTIONS).forEach((key) => {
   bot.hears(new RegExp(key, "i"), (ctx) =>
-    ctx.reply(RESPONSES[key as KeyQuestion])
+    ctx.reply("debug: " + RESPONSES[key as KeyQuestion])
   );
 });
 
