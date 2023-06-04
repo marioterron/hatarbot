@@ -26,7 +26,7 @@ export default async function handler(request, response) {
           }`;
         }
         if (new RegExp(QUESTIONS[current], "i").test(text)) {
-          return `${RESPONSES[current]} `;
+          return `${RESPONSES[current]}`;
         }
         return previous;
       }, "");
